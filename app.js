@@ -1,11 +1,16 @@
-const express = require('express');
-const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
+import express from 'express';
+import cors from 'cors';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
+
+import stakeRoutes from './routes/stake.js';
+import getSolPriceRoutes from './routes/get-sol-price.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware to parse JSON
+app.use(cors());
 app.use(express.json());
 
 // Swagger setup
@@ -23,68 +28,19 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./app.js'], // Path to the API docs
+  apis: ['./routes/*.js'], // Update path to include routes directory
 };
-
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-/**
- * @swagger
- * /:
- *   get:
- *     summary: Returns a hello world message
- *     responses:
- *       200:
- *         description: A simple hello world message
- *         content:
- *           text/plain:
- *             schema:
- *               type: string
- *               example: Hello World!
- */
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-/**
- * @swagger
- * /test:
- *   get:
- *     summary: Returns a test message
- *     responses:
- *       200:
- *         description: A simple test route
- *         content:
- *           text/plain:
- *             schema:
- *               type: string
- *               example: This is a test route!
- */
-app.get('/test', (req, res) => {
-  res.send('This is a test route!');
-});
-
-/**
- * @swagger
- * /test-json:
- *   get:
- *     summary: Returns a test JSON response
- *     responses:
- *       200:
- *         description: A JSON response with a message
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: This is a test JSON response!
- */
-app.get('/test-json', (req, res) => {
-  res.json({ message: 'This is a test JSON response!' });
-});
+// Routes
+app.use('/stake', stakeRoutes);
+app.use('/get-sol-price', getSolPriceRoutes);
 
 // Start the server
 app.listen(PORT, () => {
