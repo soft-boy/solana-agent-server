@@ -49,7 +49,7 @@ const router = express.Router();
 router.use(useAgent)
 router.post('/', async (req, res) => {
   try {
-    const { signature } = await agent.closeEmptyTokenAccounts();
+    const { signature } = await req.agent.closeEmptyTokenAccounts();
 
     res.json({ signature });
   } catch (error) {

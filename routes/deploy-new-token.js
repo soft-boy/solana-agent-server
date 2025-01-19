@@ -72,7 +72,7 @@ router.post('/', async (req, res) => {
   const { name, uri, symbol, decimals, initialSupply } = req.body;
 
   try {
-    const result = await agent.deployToken(
+    const result = await req.agent.deployToken(
       name, // "my ai token"
       uri, // "uri"
       symbol, // "token"

@@ -78,7 +78,7 @@ router.post('/', async (req, res) => {
   const { price, collateralAmount, collateralMint: _collateralMint, leverage, tradeMint, slippage } = req.body;
 
   try {
-    const signature = await agent.openPerpTradeLong({
+    const signature = await req.agent.openPerpTradeLong({
       price, // $300 SOL Max price
       collateralAmount, // 10 jitoSOL in
       collateralMint: new PublicKey(_collateralMint), // jitoSOL

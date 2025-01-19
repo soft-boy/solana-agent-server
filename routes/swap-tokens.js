@@ -73,7 +73,7 @@ router.post('/', async (req, res) => {
   } = req.body;
 
   try {
-    const signature = await agent.trade(
+    const signature = await req.agent.trade(
       new PublicKey(targetTokenMint),
       amount, // 100
       new PublicKey(sourceTokenMin),

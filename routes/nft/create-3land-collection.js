@@ -78,7 +78,7 @@ router.post('/', async (req, res) => {
   } = req.body;
 
   try {
-    const result = await agent.create3LandCollection(
+    const result = await req.agent.create3LandCollection(
       {
         collectionName,
         collectionSymbol,

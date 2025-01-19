@@ -71,7 +71,7 @@ router.post('/', async (req, res) => {
 
   try {
     const recipientKeys = recipients.map(r => new PublicKey(r))
-    const signature = await agent.sendCompressedAirdrop(
+    const signature = await req.agent.sendCompressedAirdrop(
       new PublicKey(mint), // mint
       amountPerRecipient, // 42
       recipientKeys,

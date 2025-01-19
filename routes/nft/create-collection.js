@@ -84,7 +84,7 @@ router.post('/', async (req, res) => {
   } = req.body;
 
   try {
-    const collection = await agent.deployCollection({
+    const collection = await req.agent.deployCollection({
       name, // "My NFT Collection"
       uri, // "https://arweave.net/metadata.json"
       royaltyBasisPoints, // 500 -> 5%

@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
   const { amount } = req.body;
 
   try {
-    const signature = await agent.lendAssets(amount);
+    const signature = await req.agent.lendAssets(amount);
 
     res.json({ signature });
   } catch (error) {

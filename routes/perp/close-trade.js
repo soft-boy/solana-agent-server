@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
   const { price, tradeMint: _tradeMint } = req.body;
 
   try {
-    const signature = await agent.closePerpTradeLong({
+    const signature = await req.agent.closePerpTradeLong({
       price, // 200 -> $200 SOL price
       tradeMint: new PublicKey(_tradeMint), // jitoSOL
     });

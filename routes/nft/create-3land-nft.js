@@ -126,7 +126,7 @@ router.post('/', async (req, res) => {
       mainImageUrl,
     };
 
-    const result = await agent.create3LandNft(
+    const result = await req.agent.create3LandNft(
       collectionAccount,
       createItemOptions,
       isDevnet, // (Optional) if not present TX takes place in Mainnet
