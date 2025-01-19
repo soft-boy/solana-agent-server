@@ -4,9 +4,9 @@ const router = express.Router();
 
 /**
  * @swagger
- * /stake:
+ * /stake-solayer:
  *   post:
- *     summary: Stake SOL
+ *     summary: Stake SOL on Solayer
  *     description: Allows a user to stake SOL by providing the required parameters.
  *     requestBody:
  *       required: true
@@ -65,7 +65,7 @@ router.post('/', async (req, res) => {
 
   try {
     // Use the agent to perform staking (example method call)
-    const signature = await req.agent.stake(amount);
+    const signature = await req.agent.restake(amount);
     res.json({ signature });
   } catch (error) {
     console.error('Error performing staking:', error);

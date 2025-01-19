@@ -3,8 +3,16 @@ import cors from 'cors';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
-import stakeRoutes from './routes/stake.js';
-import getSolPriceRoutes from './routes/get-sol-price.js';
+import deployNewToken from './routes/deploy-new-token.js'
+import nftRoutes from './routes/nft/index.js';
+import swapTokens from './routes/swap-tokens.js'
+import lendTokens from './routes/lend-tokens.js'
+import stake from './routes/stake.js';
+import stakeSolayer from './routes/stake-solayer.js';
+import zkAirdrop from './routes/zk-airdrop.js';
+import getSolPrice from './routes/get-sol-price.js';
+import perpRoutes from './routes/perp/index.js';
+import closeEmptyAccounts from './routes/close-empty-accounts.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,8 +47,16 @@ app.get('/', (req, res) => {
 });
 
 // Routes
-app.use('/stake', stakeRoutes);
-app.use('/get-sol-price', getSolPriceRoutes);
+app.use('/deployNewToken', deployNewToken);
+app.use('/nft', nftRoutes);
+app.use('/swap-tokens', swapTokens);
+app.use('/lend-tokens', lendTokens);
+app.use('/stake', stake);
+app.use('/stake-solayer', stakeSolayer);
+app.use('/zk-airdrop', zkAirdrop);
+app.use('/get-sol-price', getSolPrice);
+app.use('/perp', perpRoutes);
+app.use('/close-empty-accounts', closeEmptyAccounts);
 
 // Start the server
 app.listen(PORT, () => {
