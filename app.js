@@ -26,9 +26,9 @@ const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Hello World Express API',
+      title: 'SolFlow SAK API',
       version: '1.0.0',
-      description: 'A simple Express API with Swagger documentation',
+      description: 'API for Solana Agent Kit Actions',
     },
     servers: [
       {
@@ -36,7 +36,11 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./routes/*.js'], // Update path to include routes directory
+  apis: [
+    './routes/*.js',
+    './routes/nft/*.js',
+    './routes/perp/*.js'
+  ], // Update path to include routes directory
 };
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
