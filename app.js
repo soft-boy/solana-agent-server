@@ -4,6 +4,7 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
 import deployNewToken from './routes/deploy-new-token.js'
+import launchPumpFunToken from './routes/launch-pump-fun-token.js'
 import nftRoutes from './routes/nft/index.js';
 import swapTokens from './routes/swap-tokens.js'
 import lendTokens from './routes/lend-tokens.js'
@@ -51,7 +52,8 @@ app.get('/', (req, res) => {
 });
 
 // Routes
-app.use('/deployNewToken', deployNewToken);
+app.use('/deploy-new-token', deployNewToken);
+app.use('/launch-pump-fun-token', launchPumpFunToken);
 app.use('/nft', nftRoutes);
 app.use('/swap-tokens', swapTokens);
 app.use('/lend-tokens', lendTokens);
