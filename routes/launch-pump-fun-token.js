@@ -25,16 +25,16 @@ const router = express.Router();
  *             properties:
  *               tokenName:
  *                 type: string
- *                 description: The name of the token. Example: "Sample Token".
+ *                 description: The name of the token. Example "Sample Token".
  *               ticker:
  *                 type: string
- *                 description: The ticker symbol of the token. Example: "SMPL".
+ *                 description: The ticker symbol of the token. Example  "SMPL".
  *               description:
  *                 type: string
- *                 description: A brief description of the token. Example: "A sample token".
+ *                 description: A brief description of the token. Example "A sample token".
  *               imgUrl:
  *                 type: string
- *                 description: The URL of the token's image. Example: "https://example.com/img".
+ *                 description: The URL of the token's image. Example "https://example.com/img".
  *               twitter:
  *                 type: string
  *                 description: The Twitter profile URL for the token (optional).
@@ -46,13 +46,13 @@ const router = express.Router();
  *                 description: The official website URL for the token (optional).
  *               initialLiquiditySOL:
  *                 type: number
- *                 description: Initial liquidity in SOL (minimum: 0.0001). Default: 0.0001.
+ *                 description: Initial liquidity in SOL (minimum 0.0001). Default 0.0001.
  *               slippageBps:
  *                 type: number
- *                 description: Slippage tolerance in basis points (BPS). Default: 5.
+ *                 description: Slippage tolerance in basis points (BPS). Default 5.
  *               priorityFee:
  *                 type: number
- *                 description: Priority fee in SOL. Default: 0.00005.
+ *                 description: Priority fee in SOL. Default 0.00005.
  *               openai_api_key:
  *                 type: string
  *                 description: The OpenAI API key.
