@@ -26,9 +26,6 @@ const router = express.Router();
  *                 type: string
  *                 description: The public key of the trade mint (e.g., jitoSOL).
  *                 example: "SoLnAmINTAddReSS123456789"
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key.
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL.

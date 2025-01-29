@@ -19,7 +19,6 @@ const router = express.Router();
  *               - ticker
  *               - description
  *               - imgUrl
- *               - openai_api_key
  *               - rpc_url
  *               - solana_private_key
  *             properties:
@@ -53,9 +52,6 @@ const router = express.Router();
  *               priorityFee:
  *                 type: number
  *                 description: Priority fee in SOL. Default 0.00005.
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key.
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL.

@@ -15,9 +15,6 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             properties:
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key.
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL.

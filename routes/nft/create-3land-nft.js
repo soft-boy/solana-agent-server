@@ -63,9 +63,6 @@ const router = express.Router();
  *                 type: string
  *                 description: The URL of the main image for the NFT.
  *                 example: "https://example.com/nft-image.jpg"
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL

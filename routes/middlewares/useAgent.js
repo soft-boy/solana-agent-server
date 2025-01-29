@@ -5,18 +5,19 @@ import { SolanaAgentKit } from 'solana-agent-kit';
  * Adds the initialized agent to `req.agent` for use in subsequent routes.
  */
 export function useAgent(req, res, next) {
-  const { solana_private_key, rpc_url, openai_api_key } = req.body;
+  const { solana_private_key, rpc_url } = req.body;
 
   // Validate required parameters
-  if (!solana_private_key || !rpc_url || !openai_api_key) {
+  if (!solana_private_key || !rpc_url) {
     return res.status(400).json({
-      error: 'Missing required parameters: solana_private_key, rpc_url, openai_api_key',
+      error: 'Missing required parameters: solana_private_key, rpc_url',
     });
   }
 
   try {
     // Initialize SolanaAgentKit
-    const agent = new SolanaAgentKit(solana_private_key, rpc_url, { OPENAI_API_KEY: openai_api_key });
+    const OPENAI_API_KEY = process.env.OPENAI_API_KEY
+    const agent = new SolanaAgentKit(solana_private_key, rpc_url, { OPENAI_API_KEY });
 
     // Attach agent to the request object
     req.agent = agent;

@@ -43,9 +43,6 @@ const router = express.Router();
  *                       type: integer
  *                       description: The percentage share for this creator (0-100).
  *                       example: 50
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key.
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL.

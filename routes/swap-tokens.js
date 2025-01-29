@@ -32,9 +32,6 @@ const router = express.Router();
  *                 type: number
  *                 description: The maximum allowable slippage in basis points (e.g., 300 for 3%).
  *                 example: 300
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key.
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL.

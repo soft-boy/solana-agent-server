@@ -18,9 +18,6 @@ const router = express.Router();
  *               amount:
  *                 type: number
  *                 description: The amount of SOL to stake
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL
@@ -29,7 +26,6 @@ const router = express.Router();
  *                 description: The Solana private key
  *             required:
  *               - amount
- *               - openai_api_key
  *               - rpc_url
  *               - solana_private_key
  *     responses:

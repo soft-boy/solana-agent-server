@@ -19,9 +19,6 @@ const router = express.Router();
  *                 type: number
  *                 description: The amount of tokens to lend to the pool.
  *                 example: 100
- *               openai_api_key:
- *                 type: string
- *                 description: The OpenAI API key.
  *               rpc_url:
  *                 type: string
  *                 description: The Solana RPC URL.
