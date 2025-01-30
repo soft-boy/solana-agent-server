@@ -10,9 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@langchain/langgraph": "^0.2.43",
+    "@langchain/openai": "^0.4.2",
     "@solana/web3.js": "^1.98.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "langchain": "^0.3.15",
     "solana-agent-kit": "1.4.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"

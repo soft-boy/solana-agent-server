@@ -14,6 +14,7 @@ import zkAirdrop from './routes/zk-airdrop.js';
 import getSolPrice from './routes/get-sol-price.js';
 import perpRoutes from './routes/perp/index.js';
 import closeEmptyAccounts from './routes/close-empty-accounts.js';
+import reactChat from './routes/react-chat.js'
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -63,6 +64,7 @@ app.use('/zk-airdrop', zkAirdrop);
 app.use('/get-sol-price', getSolPrice);
 app.use('/perp', perpRoutes);
 app.use('/close-empty-accounts', closeEmptyAccounts);
+app.use('/react-chat', reactChat);
 
 // Start the server
 app.listen(PORT, () => {
